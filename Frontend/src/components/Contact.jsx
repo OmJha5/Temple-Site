@@ -52,7 +52,7 @@ export default function Contact() {
         e.preventDefault();
         if (isFormValid()) {
             try{
-                let res = await axios.post("http://localhost:8080/sendmail" , input , {
+                let res = await axios.post("https://temple-site-backend.onrender.com/sendmail" , input , {
                     headers : {
                         "Content-Type" : "application/json"
                     },
