@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Navbar() {
           <div className="hidden md:flex space-x-10">
             <Link to="/">Home</Link>
             <Link to="/about">About Us</Link>
-            <Link to="/donation">Donation</Link>
+            <Link to="#" onClick={() => toast.success("We are working on it.")}>Donation</Link>
             <Link to="/gallary">Gallary</Link>
             <Link to="/contact">Contact Us</Link>
           </div>

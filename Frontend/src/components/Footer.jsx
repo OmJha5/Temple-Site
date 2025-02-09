@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 
 export default function Footer() {
     let navigate = useNavigate();
-    
+
     let FaqClickHandler = () => {
         toast.success("We are working on it , will soon roll out this")
     }
@@ -60,7 +60,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-3 relative items-center justify-center p-5">
                     <p className='text-lg text-center my-3'>Copyright <b>2025 </b> &copy;  Ved Mata Gayatri Baijantri Shakti Pith Trust. All right Reserved</p>
                     <div className="flex gap-5">
-                        <a href="" ><Facebook className='w-6 h-6 hover:text-orange-500' /></a> <a href=""><Instagram className='w-6 h-6 hover:text-orange-500' /></a> <a href=""><Twitter className='w-6 h-6 hover:text-orange-500' /></a>
+                        <a href="https://www.facebook.com/profile.php?id=61572622636540" target='_blank'><Facebook className='w-6 h-6 hover:text-orange-500' /></a> <a href="" target='_blank'><Instagram className='w-6 h-6 hover:text-orange-500' /></a> <a href="https://x.com/OmkumarJha84512" target='_blank'><Twitter className='w-6 h-6 hover:text-orange-500' /></a>
                     </div>
                 </div>
             </div>
