@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  let navigate = useNavigate();
   
   return (
     <nav className="relative bg-white " >
@@ -13,7 +14,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="text-xl font-bold text-gray-900">
-            Temple
+            <span className="cursor-pointer"><span onClick={() => navigate("/")} className="text-red-500">Ved Mata</span> Temple</span>
           </div>
 
           {/* Desktop Links */}

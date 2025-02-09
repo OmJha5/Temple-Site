@@ -1,0 +1,124 @@
+import React, { useState } from 'react'
+import Navbar from './Navbar'
+import { Input } from './ui/input'
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from './ui/label'
+import { Button } from './ui/button'
+import { toast } from 'sonner'
+import axios from 'axios'
+
+export default function Contact() {
+    let [input, setInput] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+    })
+
+    let changeHandler = (e) => {
+        setInput({ ...input, [e.target.name]: e.target.value })
+    }
+
+    let isValidEmail = () => {
+        var re = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+        return re.test(input.email);
+    }
+
+    let isFormValid = () => {
+        if (input.name == "") {
+            toast.error("Name is Required");
+            return false;
+        }
+
+        if (input.message == "" || input.message.length <= 10) {
+            toast.error("Please Enter Your message of atleast 10 characters");
+            return false;
+        }
+
+        if (input.phone == "" || isNaN(input.phone) || input.phone.length != 10) {
+            toast.error("Please enter phone number correctly");
+            return false;
+        }
+
+        if (!isValidEmail(input.email)) {
+            toast.error("Please enter valid email");
+            return false;
+        }
+
+        return true;
+    }
+
+    let submitHandler = async (e) => {
+        e.preventDefault();
+        if (isFormValid()) {
+            try{
+                let res = await axios.post("http://localhost:8080/sendmail" , input , {
+                    headers : {
+                        "Content-Type" : "application/json"
+                    },
+                })  
+
+                if(res.data.success){
+                    setInput({
+                        name: "",
+                        email: "",
+                        phone: "",
+                        message: "",
+                    })
+
+                    toast.success("Mail send Sucessfully!");
+                }
+            }
+            catch(e){
+                console.log(e);
+                toast.error(e?.response?.data?.message);
+            }
+        }
+    }
+
+
+    return (
+        <div>
+            <div className="w-screen h-screen">
+                <Navbar />
+
+                <div className="w-full h-fit">
+                    <div className="my-10 flex justify-around gap-20 w-full h-fit p-10">
+                        <div className="leftInfo w-1/2 flex flex-col justify-center">
+                            <h1 className='text-5xl text-center'><span className='font-bold'>Contact</span><span className='font-normal'> Us</span></h1>
+                            <p className="text-lg text-gray-600 my-5 leading-loose text-center">
+                                Reach Out to Us Regarding Marriage execution , Health Checkups , <br /> Or Tour Of <span className='text-red-500'>Ved Mata</span> Temple
+                            </p>
+                        </div>
+
+                        <div className="rightInfo w-1/2">
+                            <form onSubmit={submitHandler} className='p-10 rounded-md !bg-white ' noValidate>
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex flex-col gap-2">
+                                        <Label htmlFor='name' >Name</Label>
+                                        <Input id="name" name="name" value={input.name} onChange={changeHandler} />
+                                    </div>
+                                    <div className="flex flex-col gap-2">
+                                        <Label htmlFor='email' >Email</Label>
+                                        <Input id="email" name="email" value={input.email} onChange={changeHandler} />
+                                    </div>
+                                    <div className="flex flex-col gap-2">
+                                        <Label htmlFor='phone' >Phone</Label>
+                                        <Input id="phone" name="phone" value={input.phone} onChange={changeHandler} />
+                                    </div>
+                                    <div className="flex flex-col gap-2">
+                                        <Label htmlFor='message' >Message</Label>
+                                        <Textarea id="message" rows="7" name="message" value={input.message} onChange={changeHandler}></Textarea>
+                                    </div>
+                                    <Button type="submit">Submit</Button>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}

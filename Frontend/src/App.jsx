@@ -5,6 +5,8 @@ import Privacy from './components/Privacy'
 import RefundAndCancellation from './components/RefundAndCancellation'
 import About from './components/About'
 import Gallary from './components/Gallary'
+import Contact from './components/Contact'
+
 
 let appRouter = createBrowserRouter([
   {
@@ -26,6 +28,10 @@ let appRouter = createBrowserRouter([
   {
       path : "/gallary",
       element : <Gallary/>
+  },
+  {
+      path : "/contact",
+      element : <Contact/>
   }
 
 ])
