@@ -5,12 +5,12 @@ import nodejsmailer from "nodemailer"
 
 const app = express();
 dotenv.config({})
-let port = process.env.PORT;
+let port = process.env.PORT || 4000;
 
 app.use(express.json())
 app.use(urlencoded({ extended: true }))
 const corsOptions = {
-    origin: "https://temple-site-frontend.onrender.com/",
+    origin: "*",
 }
 
 app.use(cors(corsOptions))
