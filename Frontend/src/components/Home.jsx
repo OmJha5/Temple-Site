@@ -1,6 +1,10 @@
 import React from 'react'
 import Navbar from "./Navbar"
 import ImageCarousel from './ImageCarousel'
+import AboutHome from './AboutHome'
+import Programms from './Programms'
+import GallaryHome from './GallaryHome'
+import Footer from './Footer'
 
 export default function Home() {
   return (
@@ -8,8 +12,13 @@ export default function Home() {
         <div >
             <Navbar />
             <ImageCarousel/>
-            
-            Lorem ipsum dolor sit amet lorem
+            <Programms/>
+
+            <AboutHome/>
+
+            <GallaryHome/>
+
+            <Footer/>
         </div>
     </div>
   )

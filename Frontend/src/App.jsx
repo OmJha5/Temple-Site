@@ -12,7 +12,7 @@ let appRouter = createBrowserRouter([
 
 export default function App() {
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow-hidden bg-[#f1f1f1]'>
          <RouterProvider router={appRouter}></RouterProvider>
     </div>
   )
