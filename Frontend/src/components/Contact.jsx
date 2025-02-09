@@ -52,8 +52,8 @@ export default function Contact() {
         e.preventDefault();
         if (isFormValid()) {
             try{
-                let res = await axios.post("https://temple-site-backend.onrender.com/sendmail" , input , {
-                // let res = await axios.post("http://localhost:8080/sendmail" , input , {
+                // let res = await axios.post("https://temple-site-backend.onrender.com/sendmail" , input , {
+                let res = await axios.post("http://localhost:8080/sendmail" , input , {
                     headers : {
                         "Content-Type" : "application/json"
                     },
@@ -80,7 +80,7 @@ export default function Contact() {
 
     return (
         <div>
-            <div className="w-screen h-screen">
+            <div className="">
                 <Navbar />
 
                 <div className="w-full h-fit">

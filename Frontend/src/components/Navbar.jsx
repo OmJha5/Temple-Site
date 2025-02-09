@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,20 +35,21 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {
-        isOpen && (
-          <div className="md:hidden shadow-md">
-            <div className="flex flex-col items-center space-y-4 py-4">
-              <Link to="/">Home</Link>
-              <Link to="/about">About Us</Link>
-              <Link to="#" onClick={() => toast.success("We are working on it.")}>Donation</Link>
-              <Link to="/gallary">Gallary</Link>
-              <Link to="/contact">Contact Us</Link>
-            </div>
-          </div>
-        )
-      }
+      {/* Mobile Menu with Animation */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`lg:hidden bg-white shadow-md ${isOpen ? "block" : "hidden"}`}
+      >
+        <div className="flex flex-col items-center space-y-4 py-4">
+          <Link to="/">Home</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="#" onClick={() => toast.success("We are working on it.")}>Donation</Link>
+          <Link to="/gallary">Gallary</Link>
+          <Link to="/contact">Contact Us</Link>
+        </div>
+      </motion.div>
     </nav>
   );
 }
