@@ -1,7 +1,9 @@
 import React from 'react'
 import { Badge } from "@/components/ui/badge"
+import { useNavigate } from 'react-router-dom';
 
 export default function GallaryHome() {
+  let navigate = useNavigate();
   return (
     <div>
         <div className="my-16 max-w-7xl mx-auto">
@@ -10,7 +12,7 @@ export default function GallaryHome() {
                 <div className="flex flex-col gap-5 justify-center">
                     <h1 className='font-bold text-3xl my-3 '>Our Gallery</h1>
                     <p className='w-[50%] text-2xl text-gray-500'>Browse through our extensive gallery of high quality images of Patwa Ved Mata Mandir</p>
-                    <Badge className="w-fit bg-red-600 text-sm px-8 py-3 rounded-full cursor-pointer hover:bg-white hover:text-black hover:border-red-500" >Browse</Badge>
+                    <Badge onClick={() => navigate("/gallary")} className="w-fit bg-red-600 text-sm px-8 py-3 rounded-full cursor-pointer hover:bg-white hover:text-black hover:border-red-500" >Browse</Badge>
 
                 </div>
 
