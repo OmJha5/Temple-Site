@@ -9,7 +9,7 @@ export default function Programms() {
         <div className="max-w-7xl mx-auto my-20">
             <h1 className='font-bold md:text-4xl max-md:text-2xl md:my-10 max-md:my-4 text-center'>Our Programes</h1>
 
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(370px,1fr))] gap-16 p-4">
+            <div className="grid sm:grid-cols-[repeat(auto-fit,minmax(370px,1fr))] max-sm-grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-16 p-4">
                 <div className='flex flex-col shadow-2xl'>
                     <div className="imageProgram">
                         <img src={health} alt="Health" width={"250px"} className='rounded-md w-full' />

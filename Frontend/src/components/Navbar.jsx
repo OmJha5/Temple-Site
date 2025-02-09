@@ -7,7 +7,7 @@ import { toast } from "sonner";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   let navigate = useNavigate();
-  
+
   return (
     <nav className="relative bg-white " >
 
@@ -37,14 +37,15 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {
         isOpen && (
-            <div className="md:hidden shadow-md">
-                <div className="flex flex-col items-center space-y-4 py-4">
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/services">Services</Link>
-                    <Link to="/contact">Contact</Link>
-                </div>
+          <div className="md:hidden shadow-md">
+            <div className="flex flex-col items-center space-y-4 py-4">
+              <Link to="/">Home</Link>
+              <Link to="/about">About Us</Link>
+              <Link to="#" onClick={() => toast.success("We are working on it.")}>Donation</Link>
+              <Link to="/gallary">Gallary</Link>
+              <Link to="/contact">Contact Us</Link>
             </div>
+          </div>
         )
       }
     </nav>

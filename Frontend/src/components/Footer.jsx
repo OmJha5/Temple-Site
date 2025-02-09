@@ -13,7 +13,7 @@ export default function Footer() {
     return (
         <div className='!bg-white pt-10'>
             <div className='flex flex-col gap-10'>
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(370px,1fr))] gap-16">
+                <div className="grid md:grid-cols-[repeat(auto-fit,minmax(370px,1fr))] max-md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] md:gap-16 max-md:gap-10">
                     <div className="text-xl font-bold text-gray-900 justify-self-center">
                         <span className="cursor-pointer"><span onClick={() => navigate("/")} className="text-red-500">Ved Mata</span> Temple</span>
                     </div>
@@ -57,10 +57,10 @@ export default function Footer() {
 
                 </div>
 
-                <div className="flex flex-col gap-3 relative items-center justify-center p-5">
-                    <p className='text-lg text-center my-3'>Copyright <b>2025 </b> &copy;  Ved Mata Gayatri Baijantri Shakti Pith Trust. All right Reserved</p>
-                    <div className="flex gap-5">
-                        <a href="https://www.facebook.com/profile.php?id=61572622636540" target='_blank'><Facebook className='w-6 h-6 hover:text-orange-500' /></a> <a href="" target='_blank'><Instagram className='w-6 h-6 hover:text-orange-500' /></a> <a href="https://x.com/OmkumarJha84512" target='_blank'><Twitter className='w-6 h-6 hover:text-orange-500' /></a>
+                <div className="flex flex-col sm:gap-3 max-sm:gap-1 relative items-center justify-center p-5">
+                    <p className='sm:text-lg max-sm:text-sm text-center my-3 leading-loose'>Copyright <b>2025 </b> &copy;  Ved Mata Gayatri Baijantri Shakti Pith Trust. All right Reserved</p>
+                    <div className="flex sm:gap-5 max-sm:gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=61572622636540" target='_blank'><Facebook className='sm:w-6 sm:h-6 max-sm:w-5 max-sm:h-5 hover:text-orange-500' /></a> <a href="" target='_blank'><Instagram className='sm:w-6 sm:h-6 max-sm:w-5 max-sm:h-5 hover:text-orange-500' /></a> <a href="https://x.com/OmkumarJha84512" target='_blank'><Twitter className='sm:w-6 sm:h-6 max-sm:w-5 max-sm:h-5 hover:text-orange-500' /></a>
                     </div>
                 </div>
             </div>

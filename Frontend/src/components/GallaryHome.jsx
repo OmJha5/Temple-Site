@@ -6,12 +6,12 @@ export default function GallaryHome() {
   let navigate = useNavigate();
   return (
     <div>
-        <div className="md:my-16 max-md:my-5 max-w-7xl mx-auto max-sm:p-10 sm:p-5">
+        <div className="md:my-16 max-md:my-5 max-w-7xl mx-auto max-sm:p-5 sm:p-5">
             <div className="flex gap-10 max-md:flex-col max-md:items-center">
                 
-                <div className="flex flex-col max-md:order-2 gap-5 justify-center">
+                <div className="flex flex-col max-md:order-2 md:gap-5 max-md:gap-2 justify-center">
                     <h1 className='font-bold md:text-3xl max-md:text-2xl md:my-3 '>Our Gallery</h1>
-                    <p className='lg:w-[50%] md:text-2xl max-md:text-xl text-gray-500'>Browse through our extensive gallery of high quality images of Patwa Ved Mata Mandir</p>
+                    <p className='lg:w-[50%] md:text-2xl max-md:text-base text-gray-500'>Browse through our extensive gallery of high quality images of Patwa Ved Mata Mandir</p>
                     <Badge onClick={() => navigate("/gallary")} className="w-fit bg-red-600 text-sm md:px-8 max-md:px-4 md:py-3 max-md:py-2 rounded-full cursor-pointer hover:bg-white hover:text-black hover:border-red-500" >Browse</Badge>
 
                 </div>

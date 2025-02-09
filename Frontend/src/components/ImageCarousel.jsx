@@ -25,18 +25,18 @@ export default function ImageCarousel() {
         <div className="w-screen">
             <Carousel
                 plugins={[plugin.current]} // Using the stored autoplay instance
-                className="w-full h-[calc(100vh-16px)] relative border-none"
+                className="w-screen h-[calc(100vh-16px)] relative border-none"
                 onMouseEnter={plugin.current.stop} // Stops autoplay on hover
                 onMouseLeave={plugin.current.reset} // Resumes autoplay on leave
             >
-                <CarouselContent className="w-full h-[calc(100vh-16px)] border-none">
+                <CarouselContent className="w-screen h-[calc(100vh-16px)] border-none">
                     {imageLinks.map((elm, index) => (
-                        <CarouselItem key={index} className="relative w-full h-[calc(100vh-16px)] border-none" >
-                            <Card className="w-full h-[calc(100vh-16px)] border-none">
+                        <CarouselItem key={index} className="relative w-screen h-[calc(100vh-16px)] border-none" >
+                            <Card className="w-screen h-[calc(100vh-16px)] border-none">
                                 <CardContent className="p-0 w-full h-[calc(100vh-16px)] border-none">
                                     <img
                                         src={elm}
-                                        className="w-full h-[calc(100vh-16px)] object-cover border-none"
+                                        className="w-screen h-[calc(100vh-16px)] object-cover border-none"
                                     />
                                 </CardContent>
                             </Card>

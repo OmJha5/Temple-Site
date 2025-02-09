@@ -20,7 +20,7 @@ export default function Gallary() {
 
             <div className='starter'>
                 <div className='md:p-16 max-md:p-5 !bg-[#f1f1f1]'>
-                    <h1 className="font-bold lg:text-3xl max-md:text-xl lg:pl-[10rem]">Photo Gallary - Shree Ved Mata Trust</h1>
+                    <h1 className="font-bold lg:text-3xl max-md:text-lg lg:pl-[10rem]">Photo Gallary - Shree Ved Mata Trust</h1>
                 </div>
             </div>
 
