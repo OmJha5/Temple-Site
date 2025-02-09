@@ -83,16 +83,16 @@ export default function Contact() {
                 <Navbar />
 
                 <div className="w-full h-fit">
-                    <div className="my-10 flex justify-around gap-20 w-full h-fit p-10">
-                        <div className="leftInfo w-1/2 flex flex-col justify-center">
-                            <h1 className='text-5xl text-center'><span className='font-bold'>Contact</span><span className='font-normal'> Us</span></h1>
-                            <p className="text-lg text-gray-600 my-5 leading-loose text-center">
+                    <div className="my-10 flex max-md:flex-col md:justify-around md:gap-20 max-md:gap-10 w-full h-fit max-sm:px-5 sm:p-10">
+                        <div className="leftInfo md:w-1/2 flex flex-col justify-center">
+                            <h1 className='md:text-5xl max-md:text-3xl text-center'><span className='font-bold'>Contact</span><span className='font-normal'> Us</span></h1>
+                            <p className="md:text-lg max-md:text-sm text-gray-600 my-5 leading-loose text-center">
                                 Reach Out to Us Regarding Marriage execution , Health Checkups , <br /> Or Tour Of <span className='text-red-500'>Ved Mata</span> Temple
                             </p>
                         </div>
 
-                        <div className="rightInfo w-1/2">
-                            <form onSubmit={submitHandler} className='p-10 rounded-md !bg-white ' noValidate>
+                        <div className="rightInfo md:w-1/2">
+                            <form onSubmit={submitHandler} className='md:p-10 max-md:p-5 rounded-md !bg-white ' noValidate>
                                 <div className="flex flex-col gap-4">
                                     <div className="flex flex-col gap-2">
                                         <Label htmlFor='name' >Name</Label>

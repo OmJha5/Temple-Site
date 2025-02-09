@@ -19,13 +19,13 @@ export default function Gallary() {
             <Navbar />
 
             <div className='starter'>
-                <div className='p-16 !bg-[#f1f1f1]'>
-                    <h1 className="font-bold text-3xl pl-[10rem]">Photo Gallary - Shree Ved Mata Trust</h1>
+                <div className='md:p-16 max-md:p-5 !bg-[#f1f1f1]'>
+                    <h1 className="font-bold lg:text-3xl max-md:text-xl lg:pl-[10rem]">Photo Gallary - Shree Ved Mata Trust</h1>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto main my-10">
-                <div className="my-10 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 ">
+            <div className="max-w-7xl mx-auto main my-10 max-md:px-5 md:p-10">
+                <div className="my-10 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 justify-items-center ">
                     {imageArray.map((img, index) => (
 
                         <div className='cursor-pointer'>

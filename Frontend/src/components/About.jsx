@@ -7,13 +7,13 @@ export default function About() {
     <div>
         <Navbar/>
 
-        <div className="my-10 max-w-7xl mx-auto">
+        <div className="my-10 max-w-7xl mx-auto p-10">
             <h1 className="font-bold text-2xl my-3">Founder - Shri Chandra Shekhar Mishra</h1>
             <p className='text-sm font-normal'>Freedom Fighter | March 21 , 1921 - June 13 , 2010</p>
 
             <div className="content my-10">
-                <div className="leftContent">
-                    <img src={img} alt="IMG" className='p-2 border border-gray-200 rounded-md float-left mr-4' />
+                <div className="leftContent max-md:flex max-md:justify-center">
+                    <img src={img} alt="IMG" className='p-2 border border-gray-200 rounded-md md:float-left mr-4' />
                 </div>
                 <div className="rightContent">
                     <p className='leading-loose'>His father was late Sudhakar Mishra and mother late Panchamee Devi.His primary schooling was done at Chandadih, and later at Munger Town High School. While at Munger he was always thinking about freedom struggle and wanted active participation.</p>
@@ -32,7 +32,7 @@ export default function About() {
                     <br />
                     <p className='leading-loose'>He left for heavenly abode on 13th June 2010.</p>
 
-                    <div className="flex gap-5 my-5">
+                    <div className="flex max-md:flex-col gap-5 my-5">
                         <iframe width="380" height="230" src="https://www.youtube.com/embed/Xa8Z82qwk1E" frameborder="0" allowfullscreen=""></iframe>
                         <iframe width="380" height="230" src="https://www.youtube.com/embed/ILA5CMA4oAk" frameborder="0" allowfullscreen=""></iframe>
                     </div>

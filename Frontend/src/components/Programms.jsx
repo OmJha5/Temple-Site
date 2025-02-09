@@ -7,7 +7,7 @@ export default function Programms() {
   return (
     <div>
         <div className="max-w-7xl mx-auto my-20">
-            <h1 className='font-bold text-4xl my-10 text-center'>Our Programms</h1>
+            <h1 className='font-bold md:text-4xl max-md:text-2xl md:my-10 max-md:my-4 text-center'>Our Programes</h1>
 
             <div className="grid grid-cols-[repeat(auto-fit,minmax(370px,1fr))] gap-16 p-4">
                 <div className='flex flex-col shadow-2xl'>
