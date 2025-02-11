@@ -8,8 +8,9 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
-import bg1 from "../Images/bg-1.jpeg"
-import bg2 from "../Images/bg-2.jpg"
+import bg1 from "../../Images/bg-1.jpeg"
+import bg2 from "../../Images/bg-2.jpg"
+import Event from "./Event"
 
 export default function ImageCarousel() {
     let imageLinks = [
@@ -22,7 +23,11 @@ export default function ImageCarousel() {
     );
 
     return (
-        <div className="w-screen">
+        <div className="w-screen relative">
+            <div className="absolute z-10 top-0 w-screen">
+                <Event/>
+            </div>
+            <div className='w-screen'>
             <Carousel
                 plugins={[plugin.current]} // Using the stored autoplay instance
                 className="w-screen h-[calc(100vh-16px)] relative border-none"
@@ -43,11 +48,12 @@ export default function ImageCarousel() {
 
                             {/* Previous and Next buttons inside image */}
                             <CarouselPrevious className="absolute left-5 transform  bg-black/50 text-white rounded-full p-3 hover:bg-black/70 transition" />
-                            <CarouselNext className="absolute right-2 bg-black/50 text-white rounded-full p-3 hover:bg-black/70 transition" />
+                            <CarouselNext className="absolute xl:right-2 max-xl:right-[-1rem] bg-black/50 text-white rounded-full p-3 hover:bg-black/70 transition" />
                         </CarouselItem>
                     ))}
                 </CarouselContent>
             </Carousel>
+            </div>
         </div>
     );
 }

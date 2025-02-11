@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
-import { Input } from './ui/input'
+import { Input } from '../ui/input'
 import { Textarea } from "@/components/ui/textarea"
-import { Label } from './ui/label'
-import { Button } from './ui/button'
+import { Label } from '../ui/label'
+import { Button } from '../ui/button'
 import { toast } from 'sonner'
 import axios from 'axios'
+import { Loader2 } from 'lucide-react'
 
 export default function Contact() {
     let [input, setInput] = useState({
@@ -14,6 +15,7 @@ export default function Contact() {
         phone: "",
         message: "",
     })
+    let [loading , setLoading] = useState(false);
 
     let changeHandler = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value })
@@ -52,6 +54,7 @@ export default function Contact() {
         e.preventDefault();
         if (isFormValid()) {
             try{
+                setLoading(true);
                 let res = await axios.post("https://temple-site-backend.onrender.com/sendmail" , input , {
                 // let res = await axios.post("http://localhost:8080/sendmail" , input , {
                     headers : {
@@ -73,6 +76,9 @@ export default function Contact() {
             catch(e){
                 console.log(e);
                 toast.error(e?.response?.data?.message);
+            }
+            finally{
+                setLoading(false);
             }
         }
     }
@@ -111,7 +117,10 @@ export default function Contact() {
                                         <Label htmlFor='message' >Message</Label>
                                         <Textarea id="message" rows="7" name="message" value={input.message} onChange={changeHandler}></Textarea>
                                     </div>
-                                    <Button type="submit">Submit</Button>
+                                    
+                                    {
+                                        (loading) ? <Button type="submit"><Loader2 className='w-6 h-6 mr-1 animate-spin' />please wait..</Button> : <Button type="submit">Submit</Button>
+                                    }
 
                                 </div>
 

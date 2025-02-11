@@ -1,17 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
-const images = import.meta.glob("../Images/Gallary/*.{jpg,jpeg,png,gif,webp}", { eager: true });
+const images = import.meta.glob("../../Images/Gallary/*.{jpg,jpeg,png,gif,webp}", { eager: true });
 const imageArray = Object.values(images).map((mod) => mod.default);
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { Button } from './ui/button';
-
 
 export default function Gallary() {
     return (

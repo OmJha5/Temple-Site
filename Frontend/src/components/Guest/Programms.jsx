@@ -1,7 +1,7 @@
 import React from 'react'
-import health from "../Images/health.jpg"
-import marriage from "../Images/marriage.jpeg"
-import pravachan from "../Images/pravachan.jpg"
+import health from "../../Images/health.jpg"
+import marriage from "../../Images/marriage.jpeg"
+import pravachan from "../../Images/pravachan.jpg"
 
 export default function Programms() {
   return (

@@ -24,7 +24,7 @@ export default function Footer() {
                         <Link to="/about"><span>About Us</span></Link>
                         <span>Donate</span>
                         <span>Our Donators</span>
-                        <span>Contact Us</span>
+                        <Link to="/contact"><span>Contact Us</span></Link>
                     </div>
 
                     <div className="flex flex-col gap-3 justify-self-center max-md:items-center">

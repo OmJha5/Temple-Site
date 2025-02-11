@@ -1,6 +1,6 @@
 import React from 'react'
-import bg from "../Images/aboutHomeBG.png";
-import { Button } from './ui/button';
+import bg from "../../Images/aboutHomeBG.png";
+import { Button } from '../ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function AboutHome() {

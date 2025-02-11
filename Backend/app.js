@@ -2,6 +2,7 @@ import express, { urlencoded } from "express"
 import cors from "cors";
 import dotenv from "dotenv"
 import nodejsmailer from "nodemailer"
+import connectDB from "./utils/db.js"
 
 const app = express();
 dotenv.config({})
@@ -45,5 +46,6 @@ app.post("/sendmail", (req, res) => {
 })
 
 app.listen(port, () => {
+    connectDB();
     console.log(`Server is listening on port ${port}`);
 })

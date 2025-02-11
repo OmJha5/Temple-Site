@@ -1,11 +1,11 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './components/Home'
-import Privacy from './components/Privacy'
-import RefundAndCancellation from './components/RefundAndCancellation'
-import About from './components/About'
-import Gallary from './components/Gallary'
-import Contact from './components/Contact'
+import Home from './components/Guest/Home'
+import Privacy from './components/Guest/Privacy'
+import RefundAndCancellation from './components/Guest/RefundAndCancellation'
+import About from './components/Guest/About'
+import Gallary from './components/Guest/Gallary'
+import Contact from './components/Guest/Contact'
 
 
 let appRouter = createBrowserRouter([
