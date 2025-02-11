@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv"
 import nodejsmailer from "nodemailer"
 import connectDB from "./utils/db.js"
+import userRouter from "./routes/user.route.js"
+import cookieParser from "cookie-parser";
 
 const app = express();
 dotenv.config({})
@@ -15,6 +17,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
+app.use(cookieParser())
 
 app.post("/sendmail", (req, res) => {
     let { name, email, phone, message } = req.body;
@@ -44,6 +47,9 @@ app.post("/sendmail", (req, res) => {
     });
 
 })
+
+// Api's
+app.use("/api/user" , userRouter);
 
 app.listen(port, () => {
     connectDB();
