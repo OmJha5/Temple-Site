@@ -32,7 +32,7 @@ export default function NavAdmin({ activeTab, setActiveTab, sidebarOpen, setSide
                     {menuItems.map((item) => (
                         
                         // Below is preety simple agar nav item users nhi hai tab to show ho jaye ya to nav item user to hai but role superadmin hai woh bhi thik case hai so show the button
-                        (item.id != "users" || user.role == "superadmin") && (
+                        (item.id != "users" || user?.role == "superadmin") && (
                             <Button
                                 key={item.id}
                                 onClick={() => { setActiveTab(item.id); setSidebarOpen(false); }}
