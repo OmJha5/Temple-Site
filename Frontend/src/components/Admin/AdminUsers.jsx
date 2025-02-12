@@ -66,7 +66,7 @@ export default function AdminUsers() {
         <div className='lg:px-20'>
             <div className="flex flex-col gap-10">
                 <div className="flex max-sm:flex-col max-sm:gap-3 justify-between items-center">
-                    <Input placeholder="Filter by email , role" className="w-fit" onChange={filterHandler} />
+                    <Input placeholder="Filter by email , role" className="w-fit" onChange={filterHandler} autoFocus onFocus={(e) => e.target.focus()}   />
                     <Button className="w-fit bg-blue-500 hover:bg-blue-400" onClick={() => setOpen(true)}>Create User</Button>
                 </div>
 

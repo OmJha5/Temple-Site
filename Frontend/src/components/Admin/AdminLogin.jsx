@@ -117,7 +117,7 @@ export default function AdminLogin() {
             </div>
 
             {
-              (loading) ? <Button className="bg-blue-500 hover:bg-blue-400"><Loader2 className='animate-spin w-5 h-5 mr-4' /><span>please wait..</span></Button> : <Button type="submit" className="max-sm:mt-1 mt-3  h-0 py-4 bg-blue-500 hover:bg-blue-400">Submit</Button>
+              (loading) ? <Button className="bg-blue-500 hover:bg-blue-400"><Loader2 className='animate-spin w-5 h-5 mr-2' /><span>please wait..</span></Button> : <Button type="submit" className="max-sm:mt-1 mt-3  h-0 py-4 bg-blue-500 hover:bg-blue-400">Submit</Button>
             }
 
           </form>

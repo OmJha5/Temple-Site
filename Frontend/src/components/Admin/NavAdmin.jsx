@@ -1,11 +1,13 @@
 import React from 'react'
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Home, Users, Menu, X } from "lucide-react";
+import { Home, Users, Menu, X, Calendar } from "lucide-react";
 import { useSelector } from 'react-redux';
+
 
 const menuItems = [
     { id: "dashboard", name: "Dashboard", icon: Home },
+    { id: "event", name: "Event", icon: Calendar },
     { id: "users", name: "Users", icon: Users },
 ];
 

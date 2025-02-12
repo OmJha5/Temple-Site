@@ -92,7 +92,7 @@ export default function DialogCreateUser({ open, setOpen , allUsers , setAllUser
     return (
         <div>
             <Dialog open={open}>
-                <DialogContent onInteractOutside={() => setOpen(false)}>
+                <DialogContent onInteractOutside={() => setOpen(false)} className="w-[95%]">
                     <DialogHeader>
                         <DialogTitle>Create User</DialogTitle>
                     </DialogHeader>

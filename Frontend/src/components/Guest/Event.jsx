@@ -1,16 +1,26 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
+import { EVENT_API_ENDPOINT } from "@/utils/apiendpoint";
 
 const Marquee = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    // Simulating fetching data from backend
-    setEvents([
-      "Maha Shivratri Celebrations – Special Pooja at 6 PM Today",
-      "Annual Rath Yatra on March 10",
-      "Temple Anniversary Celebrations on April 5 - Join Us!",
-    ]);
+    let getAllEvents = async () => {
+      try {
+        let res = await axios.get(`${EVENT_API_ENDPOINT}/all`, { withCredentials: true });
+
+        if (res.data.success) {
+          setEvents(res.data.events);
+        }
+      }
+      catch (e) {
+        toast.error(e?.response?.data?.message);
+      }
+    }
+
+    getAllEvents();
   }, []);
 
   return (
@@ -24,9 +34,9 @@ const Marquee = () => {
           repeat: Infinity,
         }}
       >
-        {events.map((event, index) => (
-          <span key={index} className="sm:text-lg max-sm:text-sm font-semibold text-red-600">
-            {event}
+        {events.map((event) => (
+          <span key={event._id} className="sm:text-lg max-sm:text-sm font-semibold text-red-600">
+            {event.message}
           </span>
         ))}
       </motion.div>

@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import nodejsmailer from "nodemailer"
 import connectDB from "./utils/db.js"
 import userRouter from "./routes/user.route.js"
+import eventRouter from "./routes/event.route.js"
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -52,6 +53,7 @@ app.post("/sendmail", (req, res) => {
 
 // Api's
 app.use("/api/user" , userRouter);
+app.use("/api/event" , eventRouter);
 
 app.listen(port, () => {
     connectDB();
