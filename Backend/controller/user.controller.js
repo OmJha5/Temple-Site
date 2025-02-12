@@ -49,7 +49,7 @@ export let login = async (req , res) => {
             role : user.role,
         }
         
-        return res.status(200).cookie("templeToken" , token , {maxAge : 7 * 24 * 60 * 60 * 1000 , httpOnly:true , sameSite:"strict"}).json({
+        return res.status(200).cookie("templeToken" , token , {maxAge : 7 * 24 * 60 * 60 * 1000 , httpOnly:true , sameSite:"none" , secure:true}).json({
             user: user,
             success : true
         })
