@@ -23,7 +23,7 @@ export default function Admin() {
             {/* Main Content */}
             <div className="flex-1 p-6 md:ml-32 transition-all duration-300 ease-in-out">
                 {activeTab === "dashboard" && <Dashboard />}
-                {user.role=="superadmin" && activeTab === "users" && <AdminUsers />}
+                {user?.role=="superadmin" && activeTab === "users" && <AdminUsers />}
             </div>
         </div>
     );
