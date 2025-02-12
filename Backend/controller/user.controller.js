@@ -184,7 +184,8 @@ export let deleteuser = async(req , res) => {
         await User.deleteOne({_id : id});
 
         res.status(200).json({
-            success : true
+            success : true,
+            message : "User deleted successfully!"
         })
     }
     catch(e){

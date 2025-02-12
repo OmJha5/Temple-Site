@@ -9,7 +9,7 @@ import { setUser } from "@/redux/userSlice";
 const useCheckUser = () => {
     let dispatch = useDispatch();
     let navigate = useNavigate();
-    
+
     useEffect(() => {
         const checkUser = async() => {
             try{
@@ -21,13 +21,14 @@ const useCheckUser = () => {
                     dispatch(setUser(res.data.user));
                     return;
                 }
-                else{
+            }
+            catch(e){
+                if(!e?.response?.data?.success){
                     // That means ya to cookie nhi hai ya to cookie mai chedchad hui hai ya to cookie hai but uske andar ka user delete ho chuka hai .
                     navigate("/admin/login");
                     toast.error(res.data.message);
                 }
-            }
-            catch(e){
+
                 toast(e?.response?.data?.message);
             }
         }
