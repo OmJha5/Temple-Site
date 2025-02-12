@@ -55,11 +55,12 @@ export default function Contact() {
         if (isFormValid()) {
             try{
                 setLoading(true);
-                // let res = await axios.post("https://temple-site-backend.onrender.com/sendmail" , input , {
-                let res = await axios.post("http://localhost:8080/sendmail" , input , {
+                let res = await axios.post("https://temple-site-backend.onrender.com/sendmail" , input , {
+                // let res = await axios.post("http://localhost:8080/sendmail" , input , {
                     headers : {
                         "Content-Type" : "application/json"
                     },
+                    withCredentials : true
                 })  
 
                 if(res.data.success){

@@ -6,6 +6,8 @@ import RefundAndCancellation from './components/Guest/RefundAndCancellation'
 import About from './components/Guest/About'
 import Gallary from './components/Guest/Gallary'
 import Contact from './components/Guest/Contact'
+import Admin from './components/Admin/Admin'
+import AdminLogin from './components/Admin/AdminLogin'
 
 
 let appRouter = createBrowserRouter([
@@ -32,6 +34,14 @@ let appRouter = createBrowserRouter([
   {
       path : "/contact",
       element : <Contact/>
+  },
+  {
+      path : "/admin",
+      element : <Admin/>
+  },
+  {
+      path : "/admin/login",
+      element : <AdminLogin/>
   }
 
 ])

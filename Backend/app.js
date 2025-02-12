@@ -13,7 +13,9 @@ let port = process.env.PORT || 4000;
 app.use(express.json())
 app.use(urlencoded({ extended: true }))
 const corsOptions = {
-    origin: "*",
+    // origin: "http://localhost:5173",
+    origin : "https://temple-site-frontend.onrender.com",
+    credentials : true,
 }
 
 app.use(cors(corsOptions))

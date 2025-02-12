@@ -49,7 +49,7 @@ export let login = async (req , res) => {
             role : user.role,
         }
         
-        return res.status(200).cookie("token" , token , {maxAge : 7 * 24 * 60 * 60 * 1000 , httpOnly:true , sameSite:"strict"}).json({
+        return res.status(200).cookie("templeToken" , token , {maxAge : 7 * 24 * 60 * 60 * 1000 , httpOnly:true , sameSite:"strict"}).json({
             user: user,
             success : true
         })
@@ -64,7 +64,7 @@ export let login = async (req , res) => {
 
 export let checkuser = async(req , res) => {
     try{
-        let token = req.cookies.token
+        let token = req.cookies.templeToken
 
         if(!token){
             return res.status(401).json({
@@ -81,13 +81,16 @@ export let checkuser = async(req , res) => {
             })
         }
 
-        const user = {
-            email : decode.email,
-            role : decode.role,
+        let isUserExist = await User.findOne({email : decode.email}).select("-password");
+        if(!isUserExist) {
+            return res.status(401).json({
+                message : "Please Login to continue",
+                success : false,
+            })
         }
 
         res.status(200).json({
-            user,
+            user : isUserExist,
             success : true
         })
     }
@@ -166,6 +169,16 @@ export let deleteuser = async(req , res) => {
                 message : "User Not Found",
                 success : false
             })
+        }
+
+        if(user.role == "superadmin"){
+            let totalsuperadmin = await User.countDocuments({role : "superadmin"})
+            if(totalsuperadmin == 1) {
+                return res.status(400).json({
+                    message : "There should be atleast one superadmin in the app",
+                    success : false
+                })
+            }
         }
 
         await User.deleteOne({_id : id});
